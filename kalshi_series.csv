@@ -1,0 +1,50 @@
+,Unnamed: 0.1,Unnamed: 0,category,series_ticker,description,review,num_events,volume
+0,0,0,economics,FED,How much will the Federal Reserve increase interest rates?,,19,380728533.0
+1,1,1,economics,FEDDECISION,What will the Federal Reserve do at their upcoming 2023 meeting?,,2,1966649.0
+2,2,2,economics,ACPI,What will the yearly inflation rate be?,,2,19139204.0
+3,3,3,economics,TERMINALRATE,What will the highest fed funds rate be for this <year>?,,1,2009621.0
+4,5,5,economics,CPI,What will CPI inflation be in the month?,,30,86139908.0
+5,6,6,economics,CPIYOY,What will the rate of CPI inflation be for the twelve months ending <month>?,,12,519748.0
+6,7,7,economics,GAS,What will the price of gas be on <day>?,,92,4159985.0
+7,8,8,economics,U3,What will the unemployment rate be in <month>?,,27,1443898.0
+8,10,10,economics,CPICORE,What will core CPI inflation be in <month>,,14,2874505.0
+9,11,11,economics,CPICOREYOY,What will the rate of core CPI inflation be for the twelve months ending <month>?,,12,223603.0
+10,12,12,economics,PROLLS,How many jobs will be added in <month>?,,11,1147454.0
+11,14,14,economics,GASMAX,What will the maximum gasoline price per gallon be by <date>?,,1,17610.0
+12,15,15,economics,GASMIN,What will the minimum gasoline price per gallon be by <date>?,,1,4587.0
+13,16,16,economics,HOMEUS,How much will single-family home prices rise in the US in <year>?,,5,396155.0
+14,17,17,economics,GDPCN,How much will China's GDP grow in <year>?,,1,396510.0
+15,18,18,economics,GDPW,How much will global GDP grow in <year>?,,1,53051.0
+16,19,19,economics,GDPEU,How much will the European Union's GDP grow in <year>?,,1,314293.0
+17,21,21,economics,GDP,Will GDP increase by more than x% in <quarter> <year>?,,10,16071080.0
+18,22,22,economics,NGASMAX,What will the maximum price of natural gas be in <year>?,,1,1531799.0
+19,23,23,financials,NASDAQ100Y,"What will the value of the Nasdaq-100 be at the end of Dec 29, 2023",,2,8567868.0
+20,24,24,financials,INXY,"What will the value of the S&P 500 be at the end of Dec 29, 2023",,2,30027608.0
+21,25,25,financials,WTIMIN,"What will the minimum WTI front-month settle price be by Dec 29, 2023?",,1,42569.0
+22,26,26,financials,NASDAQ100D,"What will the value of the Nasdaq-100 be at the end of May 15, 2023",,1,1555556.0
+23,27,27,financials,EURUSDMAX,"What will the maximum EUR/USD exchange rate be by Dec 29, 2023?",,1,207228.0
+24,28,28,financials,NASDAQ100W,"What will the value of the Nasdaq-100 be at the end of May 19, 2023",,54,120106046.0
+25,29,29,financials,WTIW,"What will the West Texas Intermediate oil front-month settle price be for May 19, 2023?",,32,5149116.0
+26,30,30,financials,TNOTEW,"What will the ten-year Treasury note rate be on May 19, 2023?",,13,777182.0
+27,31,31,financials,INXW,"What will the value of the S&P 500 be at the end of May 19, 2023",,50,198481823.0
+28,32,32,financials,INXD,"What will the value of the S&P 500 be at the end of May 15, 2023",,3,10577070.0
+29,33,33,financials,TNOTED,"What will the ten-year Treasury note rate be on May 15, 2023?",,55,1995178.0
+30,34,34,financials,WTI,"What will the West Texas Intermediate oil front-month settle price be for May 15, 2023?",,145,12644760.0
+31,35,35,financials,WTIMAX,"What will the maximum WTI front-month settle price be by Dec 29, 2023?",,1,163037.0
+32,36,36,financials,USDJPYMIN,"What will the minimum USD/JPY exchange rate be by Dec 29, 2023?",,1,1209.0
+33,37,37,financials,USDJPYMAX,"What will the maximum USD/JPY exchange rate be by Dec 29, 2023?",,1,20981.0
+34,38,38,financials,EURUSDMIN,"What will the minimum EUR/USD exchange rate be by Dec 29, 2023?",,1,163686.0
+35,39,39,financials,10Y2Y,"Will the 10-year minus 2-year Treasury spread be above 0% between Issuance and December 29, 2023?",,1,72.0
+36,40,40,financials,10Y3M,"Will the 10-year minus 3-month Treasury spread be above 0% between Issuance and December 29, 2023?",,1,102.0
+37,41,41,financials,EURUSDH,"What will the Euro/USD exchange rate be on May 15, 2023 at 3pm EDT?",,53,6033853.0
+38,42,42,financials,TNOTE,"What will the ten-year Treasury note rate be on Feb 23, 2023?",,18,2613424.0
+39,43,43,financials,EURO,"What will the Euro/USD exchange rate be on June 03, 2022?",,12,2349680.0
+40,44,44,financials,USDJPY,"What will the Yen/USD exchange rate be on Oct 20, 2022 at 6pm EDT?",,296,6397605.0
+41,45,45,financials,GOLD,"What will the price of gold be on October 05, 2022 at 4 PM?",,17,454548.0
+42,46,46,financials,EURUSD,"What will the Euro/USD exchange rate be on September 08, 2022 at 10 AM?",,314,14555197.0
+43,47,47,financials,GBP,"What will the GBP/USD exchange rate be on July 21, 2022?",,23,361066.0
+44,48,48,financials,INXU,"Will the S&P 500 be above 4210.24 at the end of August 11, 2022?",,4,686661.0
+45,49,49,financials,EUROIMF,"What will the EUR/USD exchange rate be on July 21, 2022?",,21,323170.0
+46,50,50,financials,NASDAQ100U,"Will the Nasdaq-100 be above 13378.32 at the end of August 11, 2022?",,4,625525.0
+47,51,51,financials,NASDAQ100M,"What will the value of the Nasdaq-100 be at the end of July 29, 2022",,2,85687.0
+48,52,52,financials,INXM,"What will the value of the S&P 500 be at the end of July 29, 2022",,1,25501.0
