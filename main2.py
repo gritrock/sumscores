@@ -23,7 +23,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # set up your tabs
-tab_events, tab_betting_markets, tab_sources, tab_settings = st.tabs(["📈Events", "Betting Markets", "Sources", "Settings"])
+tab_events, tab_betting_markets, tab_settings = st.tabs(["📈Events", "Betting Markets", "Settings"])
 
 
 # Display different content depending on the selected tab
@@ -179,118 +179,118 @@ with  tab_betting_markets:
     # st.table(df_agg)
 
 
-with tab_sources:
-    # import required modules
-    from PIL import Image
-    import pandas as pd
-    import os
-    import matplotlib.pyplot as plt
-    import numpy as np
+# with tab_sources:
+#     # import required modules
+#     from PIL import Image
+#     import pandas as pd
+#     import os
+#     import matplotlib.pyplot as plt
+#     import numpy as np
 
-    def overlay_text_on_image(image, text, output_path, color="black", fontsize=72):
-        img_np = np.array(image)
-        fig, ax = plt.subplots()
-        ax.imshow(img_np)
-        img_width = img_np.shape[1]
-        img_height = img_np.shape[0]
-        ax.text(img_width / 2, img_height / 2, text, fontsize=fontsize, color=color, ha='center', va='center')
-        plt.axis("off")
-        plt.savefig(output_path, format='png', bbox_inches='tight', pad_inches=0)
-        plt.close(fig)
-
-
-    def create_columns(person_info, name):
-        cols = st.columns(num_columns)
-
-        cols[1].subheader(str(name))
-
-        set_markdown(cols[0], person_info, "rank", font_size=50, font_color="green")
-        set_markdown(cols[3], person_info, "genscore", font_size=50, font_color="blue")
-
-        set_avatar(cols[2], name)
-        set_icon(cols[4], person_info, "predictions", "streak")
-        set_icon(cols[5], person_info, "bankroll", "bankroll")
-
-        return cols
+#     def overlay_text_on_image(image, text, output_path, color="black", fontsize=72):
+#         img_np = np.array(image)
+#         fig, ax = plt.subplots()
+#         ax.imshow(img_np)
+#         img_width = img_np.shape[1]
+#         img_height = img_np.shape[0]
+#         ax.text(img_width / 2, img_height / 2, text, fontsize=fontsize, color=color, ha='center', va='center')
+#         plt.axis("off")
+#         plt.savefig(output_path, format='png', bbox_inches='tight', pad_inches=0)
+#         plt.close(fig)
 
 
-    def set_markdown(column, person_info, key, font_size=50, font_color="green"):
-        value_str = str(int(person_info[key]))
-        column.markdown(f"<p style='font-size:{font_size}px; color:{font_color}'>{value_str}</p>", unsafe_allow_html=True)
+#     def create_columns(person_info, name):
+#         cols = st.columns(num_columns)
+
+#         cols[1].subheader(str(name))
+
+#         set_markdown(cols[0], person_info, "rank", font_size=50, font_color="green")
+#         set_markdown(cols[3], person_info, "genscore", font_size=50, font_color="blue")
+
+#         set_avatar(cols[2], name)
+#         set_icon(cols[4], person_info, "predictions", "streak")
+#         set_icon(cols[5], person_info, "bankroll", "bankroll")
+
+#         return cols
 
 
-    def set_avatar(column, name):
-        avatar_path = os.path.join("data", name + '.jpg')
-        avatar = Image.open(avatar_path)
-        column.image(avatar, width=100)
+#     def set_markdown(column, person_info, key, font_size=50, font_color="green"):
+#         value_str = str(int(person_info[key]))
+#         column.markdown(f"<p style='font-size:{font_size}px; color:{font_color}'>{value_str}</p>", unsafe_allow_html=True)
 
 
-    def set_icon(column, person_info, overlay_key, icon_key):
-        # Define icon based on streak value
-        icon_path = get_icon_path(icon_key, person_info)
-        overlay_value = str(int(person_info[overlay_key]))
-
-        # Overwrite the overlay value onto the icon, save it
-        icon_image = Image.open(icon_path)
-        output_path = os.path.join("data", name + "_" + icon_key + ".jpg")
-        overlay_text_on_image(icon_image, overlay_value, output_path)
-
-        # Display the icon image
-        column.image(output_path, width=100)
+#     def set_avatar(column, name):
+#         avatar_path = os.path.join("data", name + '.jpg')
+#         avatar = Image.open(avatar_path)
+#         column.image(avatar, width=100)
 
 
-    def get_icon_path(icon_key, person_info):
-        if icon_key == "streak":
-            return get_streak_icon(person_info['streak'])
-        elif icon_key == "bankroll":
-            return get_bankroll_icon(person_info['bankroll'])
+#     def set_icon(column, person_info, overlay_key, icon_key):
+#         # Define icon based on streak value
+#         icon_path = get_icon_path(icon_key, person_info)
+#         overlay_value = str(int(person_info[overlay_key]))
+
+#         # Overwrite the overlay value onto the icon, save it
+#         icon_image = Image.open(icon_path)
+#         output_path = os.path.join("data", name + "_" + icon_key + ".jpg")
+#         overlay_text_on_image(icon_image, overlay_value, output_path)
+
+#         # Display the icon image
+#         column.image(output_path, width=100)
 
 
-    def get_streak_icon(streak):
-        if streak > 5:  
-            return "data/hotball.jpg"
-        elif 1 < streak <= 5: 
-            return "data/warmball.jpg"
-        elif -1 <= streak >= -5:
-            return "data/coldball.jpg"
-        elif streak <= -5:
-            return "data/iceball.jpg"
+#     def get_icon_path(icon_key, person_info):
+#         if icon_key == "streak":
+#             return get_streak_icon(person_info['streak'])
+#         elif icon_key == "bankroll":
+#             return get_bankroll_icon(person_info['bankroll'])
 
 
-    def get_bankroll_icon(bankroll):
-        if bankroll > 10000:  
-            return "data/moneybag3.jpg"
-        elif 1 < bankroll <= 10000: 
-            return "data/moneybag2.jpg"
-        elif bankroll <= 1:
-            return "data/moneybag1.jpg"
-        # Main program
+#     def get_streak_icon(streak):
+#         if streak > 5:  
+#             return "data/hotball.jpg"
+#         elif 1 < streak <= 5: 
+#             return "data/warmball.jpg"
+#         elif -1 <= streak >= -5:
+#             return "data/coldball.jpg"
+#         elif streak <= -5:
+#             return "data/iceball.jpg"
 
-    # After reading the CSV file
-    data = pd.read_csv("sourcesscores.csv", header=0)
-    data = data.set_index("source")
 
-    # Create a list of names for each person
-    # Create a list of names from the index of the data DataFrame
-    names = data.index.tolist()
+#     def get_bankroll_icon(bankroll):
+#         if bankroll > 10000:  
+#             return "data/moneybag3.jpg"
+#         elif 1 < bankroll <= 10000: 
+#             return "data/moneybag2.jpg"
+#         elif bankroll <= 1:
+#             return "data/moneybag1.jpg"
+#         # Main program
 
-    num_columns = len(data.columns) + 1 # +1 because we're adding a name column
+#     # After reading the CSV file
+#     data = pd.read_csv("sourcesscores.csv", header=0)
+#     data = data.set_index("source")
 
-    # Create a row of columns at the top for the column names
-    header_cols = st.columns(num_columns)
+#     # Create a list of names for each person
+#     # Create a list of names from the index of the data DataFrame
+#     names = data.index.tolist()
 
-    # Set the column names
-    header_cols[0].write('RANK')
-    header_cols[1].write('NAME')
-    header_cols[2].write('')
-    header_cols[3].write('GENIUS SCORE')
-    header_cols[4].write('STREAK')
-    header_cols[5].write('BANKROLL')
+#     num_columns = len(data.columns) + 1 # +1 because we're adding a name column
 
-    # Loop over the persons
-    for name in names:
-        person_info = data.loc[name]
-        create_columns(person_info, name)
+#     # Create a row of columns at the top for the column names
+#     header_cols = st.columns(num_columns)
+
+#     # Set the column names
+#     header_cols[0].write('RANK')
+#     header_cols[1].write('NAME')
+#     header_cols[2].write('')
+#     header_cols[3].write('GENIUS SCORE')
+#     header_cols[4].write('STREAK')
+#     header_cols[5].write('BANKROLL')
+
+#     # Loop over the persons
+#     for name in names:
+#         person_info = data.loc[name]
+#         create_columns(person_info, name)
 
 
 

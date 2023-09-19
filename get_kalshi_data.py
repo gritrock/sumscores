@@ -9,6 +9,7 @@ from tqdm import tqdm
 from pprint import pprint
 import json
 from tqdm import tqdm
+import streamlit as st
 
 
 
@@ -17,7 +18,8 @@ config = Configuration()
 
 # Create an API instance passing your email and password
 
-kalshi_api = ApiInstance(email='email@email.com', password='password', configuration=config)
+kalshi_api = ApiInstance(email=st.secrets["email"], password=st.secrets["password"], configuration=config)
+
 
 
 
