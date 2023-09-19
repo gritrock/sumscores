@@ -18,7 +18,7 @@ config = Configuration()
 
 # Create an API instance passing your email and password
 
-kalshi_api = ApiInstance(email=st.secrets["email"], password=st.secrets["password"], configuration=config)
+kalshi_api = ApiInstance(email=st.secrets[kalshi]["email"], password=st.secrets[kalshi]["password"], configuration=config)
 
 
 
