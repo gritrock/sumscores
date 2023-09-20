@@ -23,7 +23,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # set up your tabs
-tab_events, tab_betting_markets, tab_settings = st.tabs(["📈Events", "Betting Markets", "Settings"])
+tab_events, tab_betting_markets, = st.tabs(["📈Events", "Betting Markets"])
 
 
 # Display different content depending on the selected tab
@@ -294,8 +294,8 @@ with  tab_betting_markets:
 
 
 
-with tab_settings:
-    st.write('in tab 4')
+#     with tab_settings:
+#     st.write('in tab 4')
 
 
 
